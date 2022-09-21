@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td, tr{
+            border: 1px solid black;
+        }
+    </style>
+
+
+</head>
+<body>
+    <ul></ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Mennyiség</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+    <ol></ol>
+    <script>
+        let szamok = [1,4,6,77,3,19,5,5,5,3,1,6,77]
+        console.log(szamok)
+        for(let i=0;i<szamok.length;i++)
+            console.log(`Index: ${i} - érték: ${szamok[i]}`)
+        //ha csak az értékek érdekelnek
+        for(let szam of szamok)
+            console.log(szam)
+
+        //ha szükséges az idex:
+        for(let i in szamok)
+            console.log(`Index: ${i} - érték: ${szamok[i]}`)
+
+
+        let pers = {
+            nev : "Gyula",
+            szuletesiev : 2002,
+            email : "gy@gmail.com"
+        }
+
+        for(let kulcs in pers)
+            console.log(kulcs)
+
+        ////////////////
+        let liStr = ""
+        for(let szam of szamok){
+            liStr += `<li>${szam}</li>`
+        }
+        console.log(liStr)
+        document.querySelector('ul').innerHTML = liStr
+
+        let termekek = [
+            {nev : "alma", kg : 100},
+            {nev : "körte", kg : 50},
+            {nev : "dió", kg : 10}
+        ]
+        let tblStr = ""
+        for(let obj of termekek){
+            console.log(obj.nev, obj.kg)
+            tblStr+=`<tr><td>${obj.nev}</td><td>${obj.kg}</td></tr>`
+        }
+        console.log(tblStr)
+        document.querySelector('tbody').innerHTML = tblStr
+        
+        //egyedi elérés
+
+        let egyediSzamok = [... new Set(szamok)]
+        console.log(szamok+ "\n" + egyediSzamok)
+        //összefűzés: 
+        let szamok2 = [100,250]
+        let ujTomb = [...szamok,...szamok2]
+        console.log(ujTomb)
+        ujTomb = [...ujTomb, 10000]
+        console.log(ujTomb)
+        ujTomb.push(20000)
+        console.log(ujTomb)
+
+        //filter:
+        let nagyokTombje = ujTomb.filter((szam) => szam >= 50)
+        console.log(nagyokTombje)
+
+        //paros
+        let paros = ujTomb.filter((szam) => szam%2 == 0 )
+        let olStr = ""
+        for(let par of paros)
+            olStr += `<li>${paros}</li>`
+        document.querySelector('ol').innerHTML = olStr
+
+    </script>
+
+</body>
+</html>

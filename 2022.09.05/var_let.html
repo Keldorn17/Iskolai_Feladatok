@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">button1</div>
+    <div id="d2">button2</div>
+    <div id="d3">button3</div>
+    <div id="d4">button4</div>
+    <div id="d5">button5</div>
+    <div id="d6">button6</div>
+    <div id="d7">button7</div>
+    <div id="d8">button8</div>
+    <div id="d9">button9</div>
+    <div id="d10">button10</div>
+
+    <script>
+        for(let i = 1 ; i <= 10 ; i++){
+            document.querySelector('#d'+i).addEventListener('click', ()=>console.log(i))
+        }
+        //karakterek elérése
+        let nev = "Anna"
+        console.log(nev.charAt(3))
+        console.log(nev[nev.length-1])
+
+        let pont = 2
+        /*if(pont >= 3)
+            console.log("Gratulálok!")
+        */
+       pont>=3 && console.log('Gratulálok!!')
+
+
+
+    </script>
+
+</body>
+</html>

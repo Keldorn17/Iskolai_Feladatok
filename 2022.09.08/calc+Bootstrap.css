@@ -1,0 +1,8 @@
+.container{
+    max-width: 300px;
+}
+.col ,.bg-info{
+    height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+}

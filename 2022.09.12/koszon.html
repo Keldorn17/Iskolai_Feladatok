@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+
+        <input type="text" id="nev" placeholder="add meg a neved">
+        <input type="submit" value="Köszönés" onclick="koszon(event)">
+        <hr>
+        <input type="button" value="beírt" onclick="beir()">
+
+    </form>
+
+    <p class="udv"></p>
+    <ul></ul>
+
+    <script>
+        function koszon(e){
+            e.preventDefault();
+            let nev = document.getElementById('nev').value
+            document.querySelector('.udv').innerHTML = `Jó reggelt : <b>${nev}</b>!`
+        }
+
+        let nevek = []
+        
+        const beir = () =>{
+            let nevObj = document.getElementById('nev')
+            if(nevObj.value.length >0){
+                nevek.push(nevObj.value)
+                nevObj.value = ""
+                console.log(nevek)
+                //listában megjeleníteni: 
+                document.querySelector('ul').innerHTML = ""
+                for(let i of nevek)
+                    document.querySelector('ul').innerHTML += `<li>${i}</li>`
+            }
+        }
+
+    </script>
+</body>
+</html>

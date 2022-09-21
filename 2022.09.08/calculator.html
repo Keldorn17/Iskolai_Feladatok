@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+
+</head>
+<body>
+    
+    <div class="container" onclick="olvas(event)">
+        <div class="resultBox">0</div>
+
+        <div class="break"></div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box op">+</div>
+
+        <div class="break"></div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box op">-</div>
+
+        <div class="break"></div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box op">*</div>
+
+        <div class="break"></div>
+        <div class="box clear">C</div>
+        <div class="box">0</div>
+        <div class="box equals">=</div>
+        <div class="box op">/</div>
+
+    </div>
+    <script>
+        //let teszt = '1+3-6*4+66'
+        //console.log(teszt, 'eredmény:', eval(teszt))
+        let str = ""
+        function olvas(e){
+           // console.log(e.target.classList)
+           // console.log('Tartalom: '+ e.target.innerHTML)
+            if(e.target.classList.contains('box')){
+                if(e.target.innerHTML == '='){
+                    // console.log(eval(str))
+                    document.querySelector('.resultBox').innerHTML = eval(str)
+                    str = ""
+                }else if(e.target.innerHTML == 'C'){
+                    str = ""
+                    document.querySelector('.resultBox').innerHTML = 0
+                }
+                else{
+                    str += e.target.innerHTML
+                    document.querySelector('.resultBox').innerHTML = str
+                    //console.log(str)
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

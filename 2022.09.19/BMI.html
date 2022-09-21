@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        .container{
+            margin: auto;
+            box-shadow: 10px, 10px;
+            max-width: 400px;
+            background-color: white;
+            box-shadow: 10px 10px 10px 10px gray;
+        }
+        h1{
+            color: white;
+            width: 100%;
+            background-color: blue;
+            text-align: center;
+        }
+        .display{
+            margin: auto;
+            box-shadow: 10px,10px;
+            width: 360px;
+            text-align: center;
+            -webkit-box-shadow: -1px 1px 5px 9px lightblue;
+            -moz-box-shadow: -1px 1px 5px 9px lightblue;
+            box-shadow: -1px 1px 5px 9px lightblue;
+        }
+        input[type="text"]{
+            border-radius: 10px;
+            height: 2rem;
+            box-shadow: 1px 1px 2px 2px blue;
+            border: 1px solid blue;
+            width: 80%;
+            margin-bottom: 10px;
+            color: blue;
+        }
+        input[type="text"]:focus{
+            outline: none;
+        }
+        input[type="button"]{
+            width: 100%;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            height: 2rem;
+        }
+        .value{
+            margin: auto;
+            width: 80%;
+        }
+        .suly{
+            color: green;
+        }
+        label{
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box">
+            <h1>BMI kalkulátor</h1>
+            <form>
+                <div class="display">
+                    <h2 class="suly">20.0</h2>
+                    <h2 class="eredmeny">Normál Testsúly</h2>
+                </div>
+                <div class="value">
+                    <input type="text" name="" id="testsuly" placeholder="testsúly">
+                    <label for="testsuly">kg</label>
+                    <br>
+                    <input type="text" name="" id="testmagassag" placeholder="testsúly">
+                    <label for="testmagassag">cm</label>
+                    <br>
+                    <input type="button" value="számol" onclick="Cal()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        const Cal = () =>{
+            let weight = document.querySelector('#testsuly').value
+            let height = document.querySelector('#testmagassag').value
+            height /= 100
+            let cal = weight / (height*height)
+            if(cal < 18.5){
+                document.querySelector('.suly').innerHTML = Math.round(cal*10)/10
+                document.querySelector('.suly').style.color = "blue"
+                document.querySelector('.eredmeny').innerHTML = "Sovány 😒"
+            }
+            if(cal < 24.9 && cal >= 18.5){
+                document.querySelector('.suly').innerHTML = Math.round(cal*10)/10
+                document.querySelector('.suly').style.color = "green"
+                document.querySelector('.eredmeny').innerHTML = "Normál testsúly 😍"
+            }
+            if(cal < 29.9 && cal >= 25){
+                document.querySelector('.suly').innerHTML = Math.round(cal*10)/10
+                document.querySelector('.suly').style.color = "red"
+                document.querySelector('.eredmeny').innerHTML = "Túlsúly 😮"
+            }
+            if(cal < 34.9 && cal >= 30){
+                document.querySelector('.suly').innerHTML = Math.round(cal*10)/10
+                document.querySelector('.suly').style.color = "red"
+                document.querySelector('.eredmeny').innerHTML = "Elhízás 😱"
+            }
+            if(cal >= 35){
+                document.querySelector('.suly').innerHTML = Math.round(cal*10)/10
+                document.querySelector('.suly').style.color = "red"
+                document.querySelector('.eredmeny').innerHTML = "Nagyon Elhízott 🙈"
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

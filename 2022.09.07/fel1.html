@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let pont = 55
+        if(pont >= 50)
+            console.log("Gratulálok!")
+        else 
+            console.log("Sajnálom...")
+
+
+        // rövidebben
+        pont >= 50 ? console.log("Grat!") : console.loh("Sajnos")
+        
+        let s1 = "125"
+        let s2 = "1.25"
+        console.log(typeof(s1), typeof(+s2))
+
+        let pers = {
+            nev : "Gyula",
+            cat : "Lara"
+        }
+        
+        if(pers?.cat)
+            console.log("Van macska")
+        else 
+            console.log("Nincs macska")
+        
+        pers?.cat ? console.log("Van cica") : console.log("Nincs cica")
+
+        let nev1 = ""
+        let nev2 = "    "
+        let nev3 = "Gyula"
+        console.log(nev1?.trim() ? `Üdv ${nev1}` : `Nem adta meg a nevét!`)
+
+        
+
+
+
+
+
+    </script>
+
+</body>
+</html>
