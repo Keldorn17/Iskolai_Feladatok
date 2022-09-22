@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>BMI</title>
+    <style>
+        .container{
+            max-width: 400px;
+            margin-top: 5%;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container shadow">
+
+        <h1 class="text-center text-primary">BMI kalkulator</h1>
+        <div class="jumbotron text-center">
+            <h2>20.0</h2>
+            <hr>
+            <h4>Normál testsúly</h4>
+        </div>
+        <form>
+            <div class="form-group">
+              <label for="height">Magasság - cm:</label>
+              <div class="d-flex">
+                  <input type="range" class="form-control-range" id="height" min="50" max="250" value="50" onchange="showValue(this)">
+                  <output class="text-primary pl-2" name="height">50</output>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="weight">Súly - kg:</label>
+                <div class="d-flex">
+                    <input type="range" class="form-control-range" id="weight" min="20" max="200" value="20" onchange="showValue(this)">
+                    <output class="text-primary pl-2" name="weight">20</output>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="Cal()">Számol</button>
+        </form>
+    </div>
+    <script>
+        const showValue = (obj) =>{
+            //console.log(obj.value, obj.id)
+            if(obj.id == 'height')
+                document.querySelector('output[name="height"]').innerHTML = obj.value
+            else
+                document.querySelector('output[name="weight"]').innerHTML = obj.value 
+        }
+        function Cal(){
+            let h = document.querySelector('#height').value
+            let w = document.querySelector('#weight').value
+            let bmi = w/((h/100)**2)
+            bmi = bmi.toFixed(1)
+            document.querySelector('h2').innerHTML = bmi
+            let color
+            let h4Obj = document.querySelector('h4')
+            if(bmi<18.5){
+                h4Obj.innerHTML = "Soványság"
+                h4Obj.style.color = "blue"
+            }else if(bmi >= 18.5 && bmi < 25){
+                h4Obj.innerHTML = "Normál testsúly"
+                h4Obj.style.color = "green"
+            }else if(bmi >= 25 && bmi < 30){
+                h4Obj.innerHTML = "Túlsúly"
+                h4Obj.style.color = "orange"
+            }else{
+                h4Obj.innerHTML = "Elhízott"
+                h4Obj.style.color = "red"
+            }
+        }
+
+    </script>
+
+</body>
+</html>
