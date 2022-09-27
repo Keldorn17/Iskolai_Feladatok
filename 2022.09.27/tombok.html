@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <ol></ol>
+    <script>
+        const uId = Math.random().toString(36).slice(2)
+        console.log(uId)
+        let szamok = [2,55,62,47,2,6,9,10,0,100]
+        console.log(szamok)
+        szamok.forEach((item, index) => console.log(`Index: ${index} Item: ${item}`))
+        szamok.forEach(item => console.log(item))
+
+        let paros = []
+        for(let item of szamok)
+            if(item%2 == 0)
+                paros.push(item)
+        console.log(paros)
+
+        //filter:
+        let paros2 = szamok.filter(item => item%2 == 0)
+        console.log(paros2)
+        //a 10-nél nagyobb számok tömbje:
+        let nagyobb10 = szamok.filter(item => item > 10)
+        console.log(nagyobb10)
+        //find: 100-as benne van?
+        // hagyományos keresés:
+        let kSzam
+        for(let item of szamok)
+            if(item == 100)
+                kSzam = 100
+        console.log(kSzam ? "igen" : "nem")
+        //röviden
+        let keresettSzam = szamok.find(item => item == 100)
+        console.log(keresettSzam? "benne van" : "nincs benne")
+
+        //findIndex
+        let keresettIndex = szamok.findIndex(item => item == 100)
+        console.log(keresettIndex) 
+
+        //map:
+        let ujTomb = szamok.map(item => `<li>${item}</li>`)
+        console.log(ujTomb)
+        let liStr = ujTomb.join('')
+        console.log(liStr)
+        document.querySelector('ul').innerHTML = liStr
+
+        let olStr = szamok.map(item => `<li>${item}</li>`).join('')
+        document.querySelector('ol').innerHTML = olStr
+
+        //összegzés:
+        let s = 0
+        for(let item of szamok)
+            s += item
+        console.log(s)
+        let s2 = szamok.reduce((acc, item) => acc+item,0)
+        console.log(s2)
+
+        let liStr2 = szamok.reduce((acc, item) => acc+`<li>${item}</li>`,``)
+        console.log(liStr2)
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="user" onchange="show(this)">
+        <option value="0">Válassz...</option>
+    </select>
+    <p>Details: </p>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Car</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        let users = [{ id: 1, name: "John", age: 30, car: null },
+                    { id: 2, name: "Carlos", age: 25, car: "Toyota" },
+                    { id: 3, name: "Brendan", age: 65, car: "BMW" },
+                    { id: 4, name: "Carol", age: 34, car: "Mercedez" },
+                    { id: 5, name: "Conway", age: 36, car: "Mazda" }]
+        let optionStr = users.map(obj => `<option value="${obj.id}">${obj.name}</option>`).join('')
+        console.log(optionStr)
+        document.querySelector('#user').innerHTML += optionStr
+        
+        const show = (obj) =>{
+            //let selUser = document.getElementById('user').value
+            let selUserId = +obj.value
+            console.log(selUserId)
+            if(selUserId > 0){
+                let selUser = users.find(obj => obj.id == selUserId)
+                console.log(selUser)
+                document.querySelector('p').innerHTML += `age: ${selUser.age} car: ${selUser.car}`
+            }else
+                document.querySelector('p').innerHTML = 'Details: '
+        } 
+
+        let tableFill = users.map(obj => `<tr><td>${obj.name}</td><td>${obj.age}</td><td>${obj.car}</td></tr>`).join('')
+        document.querySelector('tbody').innerHTML = tableFill
+
+
+
+
+    </script>
+</body>
+</html>
