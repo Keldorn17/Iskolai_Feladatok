@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let numbers = [40,1,12,31,10,20,30]
+        let animals = ['cat', 'dog', 'elephant', 'bee', 'ant']
+        console.log(numbers)
+        //növekvő sorrend:
+        console.log(numbers.sort()) //vagy
+        console.log(numbers.sort((a,b) => a-b))
+        //csökkenő sorrend:
+        console.log(numbers.sort((a,b) => b-a))
+
+        //stringeket tartalmazó tömb sorrendezése:
+        console.log(animals)
+        //növekvő sorrend:
+        console.log(animals.sort()) // vagy
+        console.log(animals.sort((a,b) => a>b ? 1 : -1))
+        //csökkenő sorrend:
+        console.log(animals.sort((a,b) => a>b ? -1 : 1)) // vagy
+        console.log(animals.sort((a,b) => a<b))
+
+        //tömb keverése: 
+        console.log(numbers.sort(() => 0.5 - Math.random()))
+
+        //objektumokat tartalmazó tömb rendezéses egy-egy obj. attribútuma szerint:
+        let users = [{ id: 1, name: "John", age: 30, car: null },
+                    { id: 2, name: "Carlos", age: 25, car: "Toyota" },
+                    { id: 3, name: "Brendan", age: 65, car: "BMW" },
+                    { id: 4, name: "Carol", age: 34, car: "Mercedez" },
+                    { id: 5, name: "Conway", age: 36, car: "Mazda" }]
+        
+        console.log(users)
+        //név szerint rendezve növekvő ABC: módusul az eredeti
+        console.log(users.sort((obj1, obj2) => obj1.name>obj2.name ? 1 : -1))
+        //életkor szerint növekvő
+        let sortedArr = [...users].sort((obj1,obj2) => obj1.age-obj2.age)
+        console.log(sortedArr)
+
+    </script>
+
+</body>
+</html>
