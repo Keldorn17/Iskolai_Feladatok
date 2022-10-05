@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main></main>
+    <section></section>
+    <div class="ol2"></div>
+    <script>
+        let animals = ['cat', 'dog', 'elephant', 'bee', 'ant']
+        //innerHtML ul:
+        let ulStr ='<ul>'
+        ulStr += animals.map(item => `<li>${item}</li>`).join('')
+        ulStr += '</ul>'
+        console.log(ulStr)
+        document.querySelector('main').innerHTML = ulStr
+
+        //createElement ol: (For -of)
+        let ol = document.createElement('ol')
+        let li 
+        for(let item of animals){
+            li = document.createElement('li')
+            li.textContent = item
+            ol.appendChild(li)
+        }
+        document.querySelector('section').appendChild(ol)
+
+        // ForEach-el
+        let ol2 = document.createElement('ol')
+        let li2 
+        animals.forEach((item) =>{
+            li2 = document.createElement('li')
+            li2.textContent = item
+            ol2.appendChild(li2)
+        })
+        document.querySelector('.ol2').appendChild(ol2)
+    </script>
+
+</body>
+</html>

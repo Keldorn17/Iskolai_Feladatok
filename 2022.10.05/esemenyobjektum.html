@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center ">
+            <button onclick="show(this)" id="ul" class="btn btn-primary m-2">Számozatlan lista</button>
+            <button onclick="show(this)" id="ol" class="btn btn-info m-2">Számozott lista</button>
+            <button onclick="show(this)" id="sel" class="btn btn-success m-2">Választó lista</button>
+        </div>
+        <main></main>
+    </div>
+    <script>
+        const frameworks=['NodeJS','ReactJS','jQuery','Express','Angular','VueJS','Django','Laravel']
+        //3 megoldás ugyan arra
+        const show = (obj) =>{
+            document.querySelector('main').innerHTML = ''
+            console.log(obj.id)
+            if(obj.id == 'ul'){
+                let str = '<ul>'
+                str += frameworks.map(item => `<li>${item}</li>`).join('')
+                str += '</ul>'
+                document.querySelector('main').innerHTML = str
+            }else if(obj.id == 'ol'){
+                let ol = document.createElement('ol')
+                frameworks.forEach(item =>{
+                    let li = document.createElement('li')
+                    li.textContent = item
+                    ol.appendChild(li)
+                })
+                document.querySelector('main').appendChild(ol)
+            }else if(obj.id == 'sel'){
+                    let sel = document.createElement('select')
+                    frameworks.forEach(item => {
+                        let option = document.createElement('option')
+                        option.textContent = item
+                        sel.appendChild(option)
+                    })
+                    document.querySelector('main').appendChild(sel)
+                }
+            
+        }
+    </script>
+</body>
+</html>

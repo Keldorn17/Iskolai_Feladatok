@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //at használata
+        let szamok = [2,55,62,100,47,2,6,9,10,0,100]
+        console.log('Legutolsó elem: ', szamok.at(-1))
+        let user = "Gyula"
+        console.log('Utolsó karakter: ', user.at(-1))
+        console.log('Első: ', user.at(0), ' Utolsó: ', user.at(-1))
+
+        //findIndex
+        let keresettIndex = szamok.findIndex(item => item == 100)
+        console.log('Első: ',keresettIndex) 
+
+        //findLastIndex
+        let lastIndex = szamok.findLastIndex(item => item == 100)
+        console.log('Második: ',lastIndex) 
+
+    </script>
+
+</body>
+</html>
