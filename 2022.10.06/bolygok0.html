@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <style>
+    body{
+      background-color: black;
+    }
+  </style>
+  <title>Bolygók</title>
+</head>
+<body>
+    <div class="container mt-2">
+      <h1 class="justify-content-center d-flex text-white">A Naprendszer bolygói</h1>
+      <div class="row"></div>
+
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+<script>
+  const bolygok=[
+    {   id:1,
+        name:'Merkúr',
+        img:'merkur.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010301Merkur/merkur.html' },
+    {   id:2,
+        name:'Vénusz',
+        img:'venusz.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010302Venusz/venusz.html' },
+    {   id:3,
+        name:'Föld',
+        img:'fold.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/01030301Fold/fold.html' },
+    {   id:4,
+        name:'Mars',
+        img:'mars.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010304Mars/Mars.html' },
+    {   id:5,
+        name:'Jupiter',
+        img:'jupiter.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010305Jupiter/Jupiter.html' },
+    {   id:6,
+        name:'Szaturnusz',
+        img:'saturn.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010306Szaturnusz/Szaturnusz.html' },
+    {   id:7,
+        name:'Uránusz',
+        img:'uranus.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010308Neptunusz/Neptunusz.html' },
+    {   id:8,
+        name:'Neptunusz',
+        img:'neptun.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010308Neptunusz/Neptunusz.html' },
+  ]
+    let str = bolygok.map(items => `<div class="col-md-3 col-6 border"><img id="${items.id}" class="img-fluid w-100 h-75 pb-2 border-bottom border-white" src="${items.img}" onclick="showModal(this)" data-toggle="modal" data-target="#staticBackdrop"><h3 class="d-flex justify-content-center text-white">${items.name}</h3></div>`).join('')
+    document.querySelector('.row').innerHTML = str
+
+    const showModal = (obj) => {
+      document.querySelector('.modal-title').innerHTML = bolygok.find(item => item.id == obj.id).name
+      let img = bolygok.find(item => item.id == obj.id).img
+      document.querySelector('.modal-body').innerHTML = `<img class="img-fluid w-100" src="${img}">`
+      let link = bolygok.find(item => item.id == obj.id).descr
+      document.querySelector('.modal-footer').innerHTML = `<a href="${link}" target="_Blank"><button type="button" class="btn btn-primary" id="linkModal">Link</button></a><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>`
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  
+</body>
+
+</html>
