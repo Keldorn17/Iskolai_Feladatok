@@ -83,6 +83,16 @@
       let link = bolygok.find(item => item.id == obj.id).descr
       document.querySelector('.modal-footer').innerHTML = `<a href="${link}" target="_Blank"><button type="button" class="btn btn-primary" id="linkModal">Link</button></a><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>`
     }
+    let titles = document.querySelectorAll('h3')
+
+      for(let obj of titles){
+        console.log(obj.textContent)
+      }
+
+      let imgArr = document.querySelectorAll('img')
+      for(let obj of imgArr){
+        console.log(obj.textContent)
+      }
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

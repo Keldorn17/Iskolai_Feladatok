@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 95vh;
+            padding: 5vw;
+        }
+        input{
+            max-width: 100px;
+        }
+        .box{
+            border: 1px solid white;
+            max-width: 50px;
+        }
+        .pointer{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container bg-light shadow">
+        <h4 class="text-center">Hol a piros?</h4>
+        <form class="d-flex justify-content-center">
+            <label for="nr" class="mr-2">Add meg a négyzetrács méretét:</label>
+            <input type="number" id="nr" class="form-control mr-2">
+            <button class="btn btn-success mr-1" onclick="rajzol(event)">Játék indul</button>
+            <button class="btn btn-danger" onclick="restart(event)">Új játék</button>
+        </form>
+        <div class="row justify-content-center mt-2">
+            <table onclick="position(event)" class="pointer"></table>
+        </div>
+    </div>
+
+    <script>
+        let randX
+        let randY
+        let win = false
+        let count = 0
+        const rajzol = (e) =>{
+            e.preventDefault()
+            document.querySelector('table').innerHTML = ""
+            let number = +document.querySelector('#nr').value
+            if(number > 2){
+                randX = Math.floor(Math.random()*number)
+                randY = Math.floor(Math.random()*number)
+                //console.log(randX, randY)
+                for(let i = 0; i < number; i++){
+                    let sor = document.querySelector('table').insertRow(-1)
+                    for(let j = 0; j < number; j++){
+                        let cella = sor.insertCell(-1)
+                        cella.classList.add('box')
+                        cella.classList.add('bg-secondary')
+                        console.log("Méret: ",window.innerWidth)
+                        if(window.innerWidth / number - 4 > 50){
+                            cella.style.width = "50px"
+                        }else{
+                            cella.style.width = window.innerWidth / number - 4 + "px"
+                        }
+                        cella.style.height = cella.style.width
+                    }
+                    win = false
+                    count = 0
+                }
+            }
+        }
+        const position = (e) =>{
+            //console.log(e.target.tagName)
+            if(e.target.tagName == 'TD' && !win){
+                let x = e.target.cellIndex
+                let y = e.target.parentNode.rowIndex
+                console.log(`x = ${x}, y = ${y}`)
+                console.log(`randX = ${randX}, randY = ${randY}`)
+                console.log(`Kattintások: ${count+1}`)
+                if(x == randX && y == randY){
+                    win = true
+                    count++
+                    e.target.classList.add('bg-danger')
+                    alert(`${count} lépésből sikerült.`)
+                }else if(!win && !e.target.classList.contains('bg-dark')){
+                    count++
+                    e.target.classList.add('bg-dark')
+                }
+                //x == randX && y == randY ? e.target.classList.add('bg-danger') : e.target.classList.add('bg-dark')
+            }
+        }
+        const restart = (e) =>{
+            e.preventDefault()
+            document.querySelector('table').innerHTML = ""
+            count = 0
+            win = false
+        }
+    </script>
+</body>
+</html>
