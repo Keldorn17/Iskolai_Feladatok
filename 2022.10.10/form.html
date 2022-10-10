@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="col-md-4">
+                    <fieldset class="border p-2">
+                        <legend>Személyes adatok</legend>
+                        <label for="Nev">Név:</label>
+                        <input type="text" id="Nev" placeholder="írd be a neved">
+                        <br>
+                        <label for="Jelszo">Jelszó:</label>
+                        <input type="password" id="Jelszo">
+                        <br>
+                        <label for="Email">E-mail:</label>
+                        <input type="email" id="Email">
+                        <br>
+                        <label for="szulEv">Születési Év:</label>
+                        <input type="number" id="szulEv">
+                        <br>
+                        <label for="szulDate">Születési Dátum:</label>
+                        <input type="date" id="szulDate">
+                    </fieldset>
+                </div>
+                <div class="col-md-4">
+                    <fieldset class="border p-2">
+                        <legend>Nyelvtudás, iskolai végzettség</legend>
+                        <input type="checkbox" id="magyar" name="magyar" value="magyar">
+                        <label for="magyar">magyar</label>
+                        <br>
+                        <input type="checkbox" id="nemet" name="nemet" value="nemet">
+                        <label for="nemet">német</label>
+                        <br>
+                        <input type="checkbox" id="angol" name="angol" value="angol">
+                        <label for="angol">angol</label>
+                        <br>
+                        <input type="checkbox" id="egyeb" name="egyeb" value="egyeb">
+                        <label for="egyeb">egyéb</label>
+                        <p>Legmagasabb iskolai végzettség:</p>
+                        <input type="radio" name="legmagasabb" id="alap">
+                        <label for="alap">alapfokú</label><br>
+                        <input type="radio" name="legmagasabb" id="kozep">
+                        <label for="">kozépfokú</label><br>
+                        <input type="radio" name="legmagasabb" id="felso">
+                        <label for="">felsőfokú</label>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
