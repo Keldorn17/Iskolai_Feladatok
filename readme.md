@@ -7,3 +7,7 @@ Helyi repo létrehozása
 - git add .
 - git commit -m ""
 - git status
+
+- git checkout master 
+- git fetch origin
+- git reset --hard orign/master
