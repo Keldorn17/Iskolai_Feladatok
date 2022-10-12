@@ -12,28 +12,33 @@
         }
         input[type="text"]{
             width: 100%;
-            font-size: 1.5rem;
-            border: 1px solid  rgb(255, 0, 255);
-            padding-left: 5%;
+            font-size: 2rem;
+            border: none;
+            padding-left: 2%;
+            outline: none;
+            border-radius: 20px;
+            
         }
-        .btn{
-            display: flex;
+        /*.btn{
             border: none;
             background-color:  rgb(255, 0, 255);
             border-radius: 1000px;
             margin-left: 5%;
             font-size: 1.5rem;
-            justify-content: center;
-            align-items: center;
             color: white;
-            cursor: pointer;
-        }
+        }*/
         .row{
             margin: auto;
-            margin-top: 5%;
+            margin-top: 2%;
         }
         .start{
             height: 5%;
+        }
+        fieldset{
+            border: 2px solid  rgb(255, 0, 255);
+            padding: 0px 10px;  
+            color: rgb(255, 0, 255);
+            border-radius: 20px;
         }
     </style>
 </head>
@@ -42,31 +47,33 @@
     <div class="container">
         <h1>Filmek</h1>
         <div class="row start">
-            <div class="col-6">
-                <input type="text" name="" id="search" placeholder="Film címe">
+            <div class="col-12">
+                <fieldset>
+                    <legend class="w-auto">
+                        Keresés
+                    </legend>
+                    <input type="text" name="" id="search" placeholder="Adja meg a film címét">
+                </fieldset>
             </div>
-            <div class="col-6">
-                <div class="btn" onclick="search()">KERES</div>
-            </div>
+            <!-- <div class="col-4">
+                <div class="btn d-flex justify-content-center" onclick="search()">KERES</div>
+            </div> -->
         </div>
         
         
-        <div class="row">
-            <div class="col-3">a</div>
-            <div class="col-3">b</div>
-            <div class="col-3">c</div>
-            <div class="col-3">d</div>
+        <div class="row display">
         </div>
     </div>
 
     <script>
         const api_key = "7ccb4adc910d16f9df656b70a94c0b89"
         let find = ""
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=hu&page=1&include_adult=false&query=${find}`
+        let url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=hu&page=1&include_adult=false&query=${find}`
 
         const getData = async (url) =>{
             const response = await fetch(url)
             const data = await response.json()
+            document.querySelector('.display').innerHTML = ""
             render(data.results)
             console.log(data.results)
         }
@@ -74,13 +81,26 @@
             for(let obj of data){
                 let imgUrl = `https://image.tmdb.org/t/p/w300/${obj.poster_path}`
                 console.log(obj.original_title, imgUrl)
+                let div = document.createElement('div')
+                let img = document.createElement('img')
+                let h3 = document.createElement('h3')
+                div.classList.add('col-md-3')
+                img.classList.add('img-fluid', 'img-thumbnail', 'h-75', 'w-100')
+                h3.classList.add('text-center')
+                img.src = imgUrl
+                h3.textContent = obj.original_title
+                div.appendChild(img)
+                div.appendChild(h3)
+                document.querySelector('.display').appendChild(div)
             }
         }
-        function search(e){
-            e.preventDefault()
-            find = document.querySelector('.search').value
-            console.log(url)
-            //getData(url)
+        document.querySelector('#search').addEventListener('keypress', function (e) {
+            e.key === 'Enter' ? search() : console.log()
+        })
+        const search = () =>{
+            find = document.querySelector('#search').value
+            url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=hu&page=1&include_adult=false&query=${find}`
+            getData(url)
         }
     </script>
 
