@@ -27,6 +27,9 @@
             font-size: 1.5rem;
             color: white;
         }*/
+        .h{
+            height: 70%;
+        }
         .row{
             margin: auto;
             margin-top: 2%;
@@ -63,6 +66,23 @@
         
         <div class="row display">
         </div>
+
+         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <script>
@@ -80,17 +100,26 @@
         function render(data){
             for(let obj of data){
                 let imgUrl = `https://image.tmdb.org/t/p/w300/${obj.poster_path}`
-                console.log(obj.original_title, imgUrl)
+                //console.log(obj.original_title, imgUrl)
                 let div = document.createElement('div')
                 let img = document.createElement('img')
-                let h3 = document.createElement('h3')
-                div.classList.add('col-md-3')
-                img.classList.add('img-fluid', 'img-thumbnail', 'h-75', 'w-100')
-                h3.classList.add('text-center')
+                let h6 = document.createElement('h6')
+                let divbtn = document.createElement('div')
+                div.classList.add('col-sm-6', 'col-md-3')
+                img.classList.add('img-fluid', 'img-thumbnail', 'w-100','h')
+                h6.classList.add('text-center')
+                divbtn.classList.add('btn', 'btn-danger','w-100')
+                divbtn.addEventListener('click', show)
+                divbtn.dataset.toggle = "modal"
+                divbtn.dataset.target = "#staticBackdrop"
+                divbtn.dataset.overview = obj.overview
+                divbtn.dataset.title = obj.original_title
                 img.src = imgUrl
-                h3.textContent = obj.original_title
+                h6.textContent = obj.original_title
+                divbtn.textContent = "Részletek"
                 div.appendChild(img)
-                div.appendChild(h3)
+                div.appendChild(h6)
+                div.appendChild(divbtn)
                 document.querySelector('.display').appendChild(div)
             }
         }
@@ -102,7 +131,14 @@
             url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=hu&page=1&include_adult=false&query=${find}`
             getData(url)
         }
+        const show = (e) =>{
+            document.querySelector('.modal-title').innerHTML = e.target.dataset.title
+            document.querySelector('.modal-body').innerHTML = e.target.dataset.overview
+        }
+
     </script>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </body>
 </html>
