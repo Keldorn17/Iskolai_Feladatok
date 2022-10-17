@@ -6,9 +6,8 @@ const nav = `
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="MathQuestion.html">Math</a>
-            <a class="nav-link" href="BMI.html">BMI</a>
-            <a class="nav-link" href="calculator.html">Calculator</a>
+            <a class="nav-link" href="red.html">red</a>
+            <a class="nav-link" href="tours.html">Tours</a>
             <a href="movies.html" class="nav-link">Movies</a>
           </div>
         </div>
