@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        input[type="text"]{
+            width: 100%;
+            font-size: 2rem;
+            border: none;
+            padding-left: 2%;
+            outline: none;
+            border-radius: 20px;
+            
+        }
+        /*.btn{
+            border: none;
+            background-color:  rgb(255, 0, 255);
+            border-radius: 1000px;
+            margin-left: 5%;
+            font-size: 1.5rem;
+            color: white;
+        }*/
+        .h{
+            height: 70%;
+        }
+        .row{
+            margin: auto;
+            margin-top: 2%;
+        }
+        .start{
+            height: 5%;
+        }
+        fieldset{
+            border: 2px solid  rgb(255, 0, 255);
+            padding: 0px 10px;  
+            color: rgb(255, 0, 255);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Filmek</h1>
+        <div class="row start">
+            <div class="col-12">
+                <fieldset>
+                    <legend class="w-auto">
+                        Keresés
+                    </legend>
+                    <input type="text" name="" id="search" placeholder="Adja meg a film címét">
+                </fieldset>
+            </div>
+            <!-- <div class="col-4">
+                <div class="btn d-flex justify-content-center" onclick="search()">KERES</div>
+            </div> -->
+        </div>
+        
+        
+        <div class="row display">
+        </div>
+
+         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+        const api_key = "7ccb4adc910d16f9df656b70a94c0b89"
+        let find = ""
+        let url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=hu&page=1&include_adult=false&query=${find}`
+
+        const getData = async (url) =>{
+            const response = await fetch(url)
+            const data = await response.json()
+            document.querySelector('.display').innerHTML = ""
+            render(data.results)
+            console.log(data.results)
+        }
+        function render(data){
+            for(let obj of data){
+                let imgUrl = `https://image.tmdb.org/t/p/w300/${obj.poster_path}`
+                //console.log(obj.original_title, imgUrl)
+                let div = document.createElement('div')
+                let img = document.createElement('img')
+                let h6 = document.createElement('h6')
+                let divbtn = document.createElement('div')
+                div.classList.add('col-sm-6', 'col-md-3')
+                img.classList.add('img-fluid', 'img-thumbnail', 'w-100','h')
+                h6.classList.add('text-center')
+                divbtn.classList.add('btn', 'btn-danger','w-100')
+                divbtn.addEventListener('click', show)
+                divbtn.dataset.toggle = "modal"
+                divbtn.dataset.target = "#staticBackdrop"
+                divbtn.dataset.overview = obj.overview
+                divbtn.dataset.title = obj.original_title
+                img.src = imgUrl
+                h6.textContent = obj.original_title
+                divbtn.textContent = "Részletek"
+                div.appendChild(img)
+                div.appendChild(h6)
+                div.appendChild(divbtn)
+                document.querySelector('.display').appendChild(div)
+            }
+        }
+        document.querySelector('#search').addEventListener('keypress', function (e) {
+            e.key === 'Enter' ? search() : console.log()
+        })
+        const search = () =>{
+            find = document.querySelector('#search').value
+            url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=hu&page=1&include_adult=false&query=${find}`
+            getData(url)
+        }
+        const show = (e) =>{
+            document.querySelector('.modal-title').innerHTML = e.target.dataset.title
+            document.querySelector('.modal-body').innerHTML = e.target.dataset.overview
+        }
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="navbar.js"></script>
+</body>
+</html>
