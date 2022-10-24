@@ -19,16 +19,18 @@
                         <input type="text" id="Nev" placeholder="írd be a neved">
                         <br>
                         <label for="Jelszo">Jelszó:</label>
-                        <input type="password" id="Jelszo">
+                        <input type="password" required id="Jelszo">
                         <br>
                         <label for="Email">E-mail:</label>
-                        <input type="email" id="Email">
+                        <input type="email" required id="Email">
                         <br>
                         <label for="szulEv">Születési Év:</label>
                         <input type="number" id="szulEv">
                         <br>
                         <label for="szulDate">Születési Dátum:</label>
                         <input type="date" id="szulDate">
+                        <input type="range" id="pont" onchange="show(this)" min="0" max="10" step="1" value="5">
+                        <div id="pontErtek">5</div>
                     </fieldset>
                 </div>
                 <div class="col-md-4">
@@ -46,17 +48,34 @@
                         <input type="checkbox" id="egyeb" name="egyeb" value="egyeb">
                         <label for="egyeb">egyéb</label>
                         <p>Legmagasabb iskolai végzettség:</p>
-                        <input type="radio" name="legmagasabb" id="alap">
+                        <input type="radio" name="legmagasabb" value="alap" id="alap">
                         <label for="alap">alapfokú</label><br>
-                        <input type="radio" name="legmagasabb" id="kozep">
+                        <input type="radio" name="legmagasabb" value="kozep" id="kozep">
                         <label for="kozep">kozépfokú</label><br>
-                        <input type="radio" name="legmagasabb" id="felso">
+                        <input type="radio" name="legmagasabb" value="felso" id="felso">
                         <label for="felso">felsőfokú</label>
                     </fieldset>
                 </div>
+                <div class="col-md-4">
+                    <fieldset class="border p-2">
+                        <legend>Válassz egy ágazatot:</legend>
+                        <select id="agazat" class="custom-select mb-3">
+                            <option value="0">válassz...</option>
+                            <option value="web">webfejlesztő</option>
+                            <option value="szoft">szoftverfejlesztő</option>
+                            <option value="rend">rendszergazda</option>
+                            <option value="prog">programozó</option>
+                        </select>
+                        <textarea class="form-control" id="Velemeny" cols="30" rows="10" placeholder="mond el a véleményed..."></textarea>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <input onclick="kuldes()" class="btn btn-primary" type="button" value="mentés" > 
             </div>
         </form>
+        <div class="msg text-danger"></div>
     </div>
-
+    <script src="adatok.js"></script>
 </body>
 </html>
