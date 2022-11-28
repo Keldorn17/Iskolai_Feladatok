@@ -18,10 +18,13 @@ Hasznos oldalak
 - https://reactjs.org/
 - https://reactstrap.github.io/?path=/docs/components-forms--form
 - https://mui.com/
+- https://fontawesome.com/
+- https://cdnjs.com/libraries/font-awesome
 
 React készítés
 - npx create-react-app .
 - npm start
+- npm install (új gépen meglévő feladattal)
 
 React emmet
 - rfc

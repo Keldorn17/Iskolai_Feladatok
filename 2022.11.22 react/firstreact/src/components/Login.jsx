@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 
-export default function Login() {
+export default function Login({ setIsLoggedIn }) {
   //console.log(process.env.REACT_APP_USERNAME)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,6 +24,10 @@ export default function Login() {
     password == process.env.REACT_APP_PW
       ? setIsValidP(true)
       : setIsValidP(false);
+  };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    isValidU && isValidP ? setIsLoggedIn(true) : setIsLoggedIn(false);
   };
   return (
     <div className="row justify-content-center">
@@ -55,7 +59,13 @@ export default function Login() {
           />
           <FormFeedback>Hibás jelszó</FormFeedback>
         </FormGroup>
-        <Button color="primary">Login</Button>
+        <Button
+          color="primary"
+          disabled={!username || !password}
+          onClick={handleLogin}
+        >
+          Login
+        </Button>
       </Form>
     </div>
   );
