@@ -1,0 +1,17 @@
+.holder{
+  background-color: blueviolet!important;
+  height: 100vh!important;
+  padding-top: 50px!important;
+}
+.row{
+  padding: 30px!important;
+}
+i{
+  border: 0px solid rgba(255, 170, 0,.5);
+  background-color: rgba(255, 170, 0,.5);
+  padding: 5px;
+  border-radius: 100%;
+  color: black;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
