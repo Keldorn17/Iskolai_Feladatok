@@ -6,6 +6,7 @@
 }
 body{
     background-image: url('physics_back.jpg');
+    background-size: cover;
 }
 h1{
     color: blue;
