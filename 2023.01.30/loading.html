@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .text span{
+        display: inline-block;
+        color: white;
+        font-size: 40px;
+        animation-name: rotate;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-delay: calc(.2s * var(--i));
+    }
+    @keyframes rotate {
+        0% {transform: rotateY(0deg);}
+        100% {transform: rotateY(360deg);}
+    }
+</style>
+<body>
+    <div class="text">
+        <span style="--i:1">L</span>
+        <span style="--i:2">O</span>
+        <span style="--i:3">A</span>
+        <span style="--i:4">D</span>
+        <span style="--i:5">I</span>
+        <span style="--i:6">N</span>
+        <span style="--i:7">G</span>
+        <span style="--i:8">.</span>
+        <span style="--i:9">.</span>
+        <span style="--i:10">.</span>
+    </div>
+</body>
+</html>

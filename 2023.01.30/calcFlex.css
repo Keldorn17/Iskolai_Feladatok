@@ -1,0 +1,29 @@
+.container{
+    width:300px;
+    border:1px solid black;
+    margin:0 auto;
+    display:flex;
+    flex-wrap: wrap;
+}
+.break{
+    width:100%;
+}
+.box{
+    flex:1;
+    border:1px solid black;
+    height: 4rem;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 2rem;
+}
+.resultBox{
+    width:100%;
+    height: 4rem;
+    font-size: 2rem;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    border:1px solid black;
+}
