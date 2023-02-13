@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3fe88f81-1fca-477f-a615-d6ac4c7b68a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/.idea/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../If/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../If/.idea/If.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../If/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../If/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../If/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../If/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../If/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Input/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Input/.idea/Input.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Input/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Input/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Input/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Input/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Input/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Math/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Math/.idea/Math.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Math/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Math/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Math/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Math/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Math/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringSlicing/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringSlicing/.idea/StringSlicing.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringSlicing/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringSlicing/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringSlicing/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringSlicing/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringSlicing/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../While/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../While/.idea/While.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../While/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../While/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../While/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../While/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../While/main.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LgPv0cq7KdPrXyNwM5Yik0Px0o" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fe88f81-1fca-477f-a615-d6ac4c7b68a9" name="Changes" comment="" />
+      <created>1676289979018</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676289979018</updated>
+    </task>
+    <servers />
+  </component>
+</project>
