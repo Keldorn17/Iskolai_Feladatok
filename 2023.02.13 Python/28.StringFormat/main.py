@@ -15,11 +15,17 @@ print(text.format(animal, item))
 name = "Bro"
 
 print("Hello, my name is {}. Nice to meet you.".format(name))
-print("Hello, my name is {:10}. Nice to meet you.".format(name))
+print("Hello, my name is {name:10}. Nice to meet you.".format(name=name))
 print("Hello, my name is {:<10}. Nice to meet you.".format(name))  # left align
 print("Hello, my name is {:>10}. Nice to meet you.".format(name))  # right align
 print("Hello, my name is {:^10}. Nice to meet you.".format(name))  # center align
 
-number = 3.14159
+number = 1000
 
 print("The number pi is {:.3f}".format(number))
+print("The number is {:,}".format(number))  # Automatically add a comma to all one thousand places
+print("The number is {:b}".format(number))  # Converts it to binary
+print("The number is {:o}".format(number))  # Converts it to octal
+print("The number is {:X}".format(number))  # Converts it to hexadecimal
+#                                                (Lowercase x = lowercase || Uppercase X = uppercase)
+print("The number is {:E}".format(number))  # Converts it to scientific notation
