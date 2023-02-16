@@ -1,1 +1,1 @@
-2:33:26 29.random numbers -git pull !!!
+2:47:30 32. read a file
