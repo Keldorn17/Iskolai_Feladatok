@@ -1,0 +1,4 @@
+npm init -y
+npm i jest
+
+npm run test

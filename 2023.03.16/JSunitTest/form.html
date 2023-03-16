@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <script src="bootstrap/jquery.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+
+  <script src="form.js"></script>
+
+    <title>Form validalas</title>
+</head>
+<body>
+    <div class="container border bg-light">
+    <div class="row justify-content-center"><div class="col-8">
+
+    <ul id="hibalista"></ul>
+
+    <form class="p-5">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email">
+          
+        </div>
+        <div class="form-group">
+          <label for="passw">Password</label>
+          <input type="password" class="form-control" id="passw" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <label for="sel">Erdeklodesi korod</label>
+            <select class="form-control" id="sel">
+              <option value="0">valassz egyet</option>
+              <option value="1">foci</option>
+              <option value="2">rajzolas</option>
+              <option value="3">informatika</option>
+              <option value="4">mas</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="pont">Hogyan ertekeled a megvasarolt termeket minosegi szempontbol (0 - 10) ?</label>
+            <input type="range" class="form-control-range" id="pont" min="0" max="10" step="1" value="0" onchange="pontMutat(event)">
+            <output id="pontErtek">0</output>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check form-check-inline">Milyen nyelvet/nyelveket szeretnel tanulni?</div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="nyelv" value="francia">
+                    <label class="form-check-label" >francia</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="nyelv"  value="nemet">
+                    <label class="form-check-label" >nemet</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="nyelv"  value="angol">
+                    <label class="form-check-label" >angol</label>
+                </div>
+        </div> 
+
+        <div class="form-group">
+            <div class="form-check form-check-inline">Melyik kategoriaba tartozol?</div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rOp"  value="diak">
+                <label class="form-check-label" for="inlineRadio1">diak</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rOp"  value="tanar">
+                <label class="form-check-label" for="inlineRadio2">tanar</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rOp" i value="szulo" >
+                <label class="form-check-label" for="inlineRadio3">szulo </label>
+            </div>
+        </div>
+
+       
+        <button id="elkuld" type="elkuld" class="btn btn-primary" onclick="ellenoriz(event)">Submit</button>
+      </form>
+      <hr>
+      <ul id="adatok"></ul>
+      
+    </div>
+    
+  </div>
+</div>
+</body>
+</html>
